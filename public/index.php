@@ -23,7 +23,7 @@ $router = new AltoRouter(); // <=  Si souligné pas grave vient d'un soucis d'ID
 // 2. On doit dire à AltoRouter la partie de l'URL à ne pas prendre en compte pour le mapping
 
 // Pour cela, on va utiliser une variable fournie par le .htaccess
-dump($_SERVER);
+// dump($_SERVER);
 //TODO dump( get_defined_vars() );  
 // $_SERVER['BASE_URI'] contient la partie de l'URL à ne pas prendre en compte (
 //  pour savoir à partir d'ou il doit faire correspondance)
@@ -39,6 +39,7 @@ if (array_key_exists('BASE_URI', $_SERVER)) {
 } else {
     $_SERVER['BASE_URI'] = '/';
 }
+dump($_SERVER);
 // Version Bing
 // if (!isset($_SERVER['BASE_URI'])) {
 //     $_SERVER['BASE_URI'] = '/';

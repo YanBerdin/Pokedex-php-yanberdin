@@ -16,7 +16,7 @@
     // dump($absoluteUri);
     // var_dump($routeur);  
     ?>
-    <title>POKEDEX (MVC)</title>
+    <title>Pokedex for MVC lovers </title>
 </head>
 
 <!-- <body>

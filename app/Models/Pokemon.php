@@ -73,6 +73,33 @@ class Pokemon extends CoreModel
      return $result;
  }
 
+    /**
+     * Method to retrieve all data from Pokemon according to his type 
+     *
+     * @param string $sort
+     * @return Pokemon[]
+     */
+    public static function findAllByType($typeId, $group = "", $sort = "")
+    {
+        $pdo = Database::getPDO();
+
+        $sql = "SELECT *, pokemon.name AS `pokemon_name`, pokemon.id AS `pokemon_id`, type.id AS `type_id`, type.name AS `type_name`, type.color
+        FROM `pokemon`
+        INNER JOIN `pokemon_type` ON pokemon.number = pokemon_type.pokemon_number
+        INNER JOIN `type` ON type.id = pokemon_type.type_id
+        WHERE type.id = " . $typeId
+        ;
+        if ($group !== "") {
+            $sql .= " GROUP BY $group";
+        }
+        if ($sort !== "") {
+            $sql .= " ORDER BY $sort";
+        }
+
+        $pdoStatement = $pdo->query($sql);
+      
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
+    }    
 
     /**
      */ 

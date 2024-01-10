@@ -5,20 +5,10 @@ namespace Pokedex\Controllers;
 // require_once __DIR__ . '/../Models/Type.php';
 
 use Pokedex\Models\Pokemon;
-use Pokedex\Models\Type;
+// use Pokedex\Models\Type;
 
 class CatalogController extends CoreController
 {
-
-    public function type()
-    {
-        $pokemonsModel = new Type;
-
-        $typeList = $pokemonsModel->findAll();
-        $this->show("type-list", [
-            "types" => $typeList
-        ]);
-    }
     /**
      * Method to display one pokemon by number
      *
@@ -35,29 +25,14 @@ class CatalogController extends CoreController
     }
 
     /**
-     * Affiche la page
+     * Method to display all pokemon related to one type
      *
-     * @param string $viewName
-     * @param array $viewData (Facultatif)
+     * @param int $id
+     * @return Pokemon[]
      */
-
-    //? public function show($viewName, $viewData = [])
-    //? {
-        // Si on veut transmettre aux templates une donnée, on peut le faire ici
-        // $url = 'google.com';
-
-        // Objectif : récupérer proprement tous nos assets (style, images, ...)
-        // On doit utiliser une URL absolue (plutôt que relative) pour cela
-        // On a vu que $_SERVER['BASE_URI'] contenait l'URL dont on a besoin
-        //? global $router;
-        //? $absoluteUri = $_SERVER['BASE_URI'];
-
-        // $modelPokemon = new Pokemon();
-        // $fullPokemon = $modelPokemon->findAll();
-
-
-    //?     include (__DIR__ . '/../partials/header.part.php');
-    //?    include (__DIR__ . '/../views/' . $viewName . '.tpl.php');
-    //?     include (__DIR__ . '/../partials/footer.part.php');
-    //? }
+    public function showType($id)
+    {
+        $pokemonByType = Pokemon::findAllByType($id, "", 'number');
+        $this->show('home', ['pokemonByType' => $pokemonByType]);
+    }
 }

@@ -64,16 +64,6 @@ $router->map(
     'home'  // utile plus tard ; NB : ce nom de route doit être unique
 );
 
-// $router->map(
-//     'GET',
-//     '/test',
-//     [
-//         'controller' => 'MainController',
-//         'method'     => 'test'
-//     ],
-//     'test'
-// );
-
 $router->map(
     "GET",
     "/pokemon-catalog/[i:id]", //   "/pokemon-catalog"

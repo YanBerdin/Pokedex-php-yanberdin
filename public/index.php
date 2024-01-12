@@ -39,7 +39,7 @@ if (array_key_exists('BASE_URI', $_SERVER)) {
 } else {
     $_SERVER['BASE_URI'] = '/';
 }
-dump($_SERVER);
+// dump($_SERVER);
 // Version Bing
 // if (!isset($_SERVER['BASE_URI'])) {
 //     $_SERVER['BASE_URI'] = '/';

@@ -1,4 +1,4 @@
-body {
+.body-container{
     background: #C14040;
     color: #FFF;
     font-family: 'Bree Serif', serif;
@@ -10,11 +10,11 @@ body {
     box-sizing: border-box;
 }
 
-a, a:visited {
+main a, main a:visited {
     color: #F9D3D3;
     text-decoration: none;
 }
-a:hover, a:focus {
+main a:hover, main a:focus {
     color: #E2A9A9;
 }
 
@@ -34,6 +34,7 @@ img {
 
 header a, header a:visited {
     color: #C14040;
+    text-decoration: none;
 }
 header {
     margin: 1rem 0;

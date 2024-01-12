@@ -1,13 +1,13 @@
 <section class="products-grid">
-    <div class="container-fluid">
-        <div class="row">
-            <h1>404 Not Found</h1>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-        <h2>Saperlipopette ! La page demandée n'est pas disponible</h2>
+    <div class="container">
+        <div class="gif">
+            <!-- <h1>404 Not Found</h1> -->
+            <p class="error-404">Saperlipopette !</p>
+            <img class="gif-img" src="https://i.gifer.com/SsQa.gif">
+            <p>La page demandée n'existe pas</p>
+            </ul>
+
 
         </div>
-    </div>
+
 </section>

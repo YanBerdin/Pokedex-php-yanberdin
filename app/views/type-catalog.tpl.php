@@ -9,7 +9,7 @@ $pokemonsByType = $viewData['pokemonsByType'];
 foreach ($pokemonsByType as $pokemonElement) {
         ?>
         <div class="col text-center">
-          <a href="<?= $router->generate('type-catalog', ["id" => $pokemonElement->getNumber()]) ?>" rel="noopener noreferrer">
+          <a href="<?= $router->generate('pokemon-catalog', ["number" => $pokemonElement->getNumber()]) ?>" rel="noopener noreferrer">
             <div class="card h-100 pokemon" style ="background-color: #<?= $pokemonElement->color ?>">
               <img src="../img/<?= $pokemonElement->getNumber() ?>.png" class="card-img-top" alt="image d'un pokemon">
               <div class="card-body">

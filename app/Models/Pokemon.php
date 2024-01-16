@@ -79,7 +79,7 @@ class Pokemon extends CoreModel
     {
         $pdo = Database::getPDO();
 
-        $sql = "SELECT DISTINCT *, pokemon.name AS `pokemon_name`, pokemon.id AS `pokemon_id`, type.id AS `type_id`, type.name AS `type_name`, type.color
+        $sql = "SELECT DISTINCT *, pokemon.name AS `pokemon_name`, pokemon.id AS `pokemon_id`, type.id AS `type_id`, type.name AS `type_name`, type.color AS `type_color`
         FROM `pokemon`
         INNER JOIN `pokemon_type` ON pokemon.number = pokemon_type.pokemon_number
         INNER JOIN `type` ON type.id = pokemon_type.type_id

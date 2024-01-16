@@ -78,6 +78,17 @@ $router->map(
 
 $router->map(
     "GET", // methode
+    "/type-list/[i:id]", // Partie de l'URL qui correspond à la page demandée (route)
+    [
+        'controller' => CatalogController::class, // Target => on reconstruit notre ancien array $routes (en adaptant à altorouteur )
+        'method' => 'showtype',
+    ],
+    'type-details' //  NB : ce nom de route doit être unique
+);
+
+
+$router->map(
+    "GET", // methode
     "/type-list", // Partie de l'URL qui correspond à la page demandée (route)
     [
         'controller' => CatalogController::class, // Target => on reconstruit notre ancien array $routes (en adaptant à altorouteur )

@@ -5,7 +5,7 @@ namespace Pokedex\Controllers;
 // require_once __DIR__ . '/../Models/Type.php';
 
 use Pokedex\Models\Pokemon;
-// use Pokedex\Models\Type;
+use Pokedex\Models\Type;
 
 class CatalogController extends CoreController
 {
@@ -33,6 +33,21 @@ class CatalogController extends CoreController
     public function showType($id)
     {
         $pokemonByType = Pokemon::findAllByType($id, "", 'number');
-        $this->show('home', ['pokemonByType' => $pokemonByType]);
+        $this->show('type-list', ['pokemonByType' => $pokemonByType]);
+    }
+
+    /**
+     * Method to display all types
+     *
+     * // @return Types[]
+     */
+    public function type()
+    {
+        $pokemonsModel = new Type;
+
+        $typeList = $pokemonsModel->findAll();
+        $this->show("type-list", [
+            "types" => $typeList
+        ]);
     }
 }

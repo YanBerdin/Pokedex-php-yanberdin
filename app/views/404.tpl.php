@@ -1,3 +1,7 @@
+<?php
+//TODO comment dump()
+dump( get_defined_vars() );  
+?>
 <section class="products-grid">
     <div class="container">
         <div class="gif">

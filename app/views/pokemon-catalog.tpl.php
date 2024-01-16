@@ -12,7 +12,7 @@
 
 $pokemon = $viewData['pokemon'];
 
-// var_dump($pokemon);
+ dump($pokemon);
 
 // var_dump($pokemon->getName());
 

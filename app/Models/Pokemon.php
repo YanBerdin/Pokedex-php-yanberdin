@@ -1,8 +1,6 @@
 <?php
 namespace Pokedex\Models;
 
-// require_once __DIR__ . "/../Utils/Database.php";
-
 use PDO;
 use Pokedex\Utils\Database;
 
@@ -18,9 +16,6 @@ class Pokemon extends CoreModel
     private $spe_defense;
     private $speed;
     private $number;
-
-
-
 
 
  // Méthodes
@@ -61,7 +56,8 @@ class Pokemon extends CoreModel
      // 1. Connexion à la BDD
      $pdo = Database::getPDO();
      // 2. On écrit la query string
-     $queryString = "SELECT * FROM `pokemon` WHERE number = $number";
+     //$queryString = "SELECT * FROM `pokemon` WHERE number = $number";
+     $queryString = "SELECT * FROM `pokemon` WHERE `number` =". $number;
 
      // 3. On exécute la requête
      $pdoStatement = $pdo->query($queryString); // ( voir S04 pour Syntaxe $pdo-> )
@@ -79,7 +75,7 @@ class Pokemon extends CoreModel
      * @param string $sort
      * @return Pokemon[]
      */
-    public static function findAllByType($typeId, $group = "", $sort = "")
+    public function findAllByType($typeId, $group = "", $sort = "")
     {
         $pdo = Database::getPDO();
 
@@ -101,24 +97,7 @@ class Pokemon extends CoreModel
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     }    
 
-    /**
-     */ 
-    // public function getId()
-    // {
-    //     return $this->id;
-    // }
-
-    // /**
-    //  * Set the value of id
-    //  *
-    //  * @return  self
-    //  */ 
-    // public function setId($id)
-    // {
-    //     $this->id = $id;
-
-    //     return $this;
-    // }
+    
 
     /**
      * Get the value of name

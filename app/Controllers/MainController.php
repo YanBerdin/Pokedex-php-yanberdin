@@ -13,16 +13,17 @@ class MainController extends CoreController
     //     $this->show('home');
     // }
 
+    // Affichage de la liste (page d'accueil)
     public function catalog()
     {
         $pokemonModel = new Pokemon;
 
         $pokemonList = $pokemonModel->findAll();
         $this->show("home", [
+            'title' => 'Accueil',
             "pokemons" => $pokemonList
         ]);
     }
-
 
     /**
      * Affiche la page

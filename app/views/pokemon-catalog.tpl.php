@@ -1,21 +1,15 @@
 <h3> Recherche par Numéro</h3>
 
 <?php
-// var_dump($viewData);
-
+dump($viewData);
 // var_dump($viewData['pokemons']);
-
 // $pokemons = $viewData['pokemons'];
-
 // var_dump($pokemons);
-
 
 $pokemon = $viewData['pokemon'];
 
- dump($pokemon);
-
+// dump($pokemon);
 // var_dump($pokemon->getName());
-
 // var_dump($absoluteUri); // grace à => global $router; dans show()
 ?>
 <div class="titre">
@@ -23,7 +17,6 @@ $pokemon = $viewData['pokemon'];
       <h1><?php echo $pokemon->getName() ?> </h1>
 
 </div>
-
 
 <div>
       <ul>

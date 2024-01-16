@@ -1,4 +1,5 @@
 <?php
+
 namespace Pokedex\Controllers;
 
 // require_once __DIR__ . '/../Models/Pokemon.php';
@@ -12,28 +13,18 @@ class CatalogController extends CoreController
     /**
      * Method to display one pokemon by number
      *
-     * @param int $number
+     * @param int $number = Pokemon's number
      * @return Pokemon
      */
     public function detail($number)
     {
         $pokemonModel = new Pokemon;
         $pokemon = $pokemonModel->findOne($number);
+
         $this->show("pokemon-catalog", [
+            'title' => 'pokemon-card',
             "pokemon" => $pokemon
         ]);
-    }
-
-    /**
-     * Method to display all pokemon related to one type
-     *
-     * @param int $id
-     * @return Pokemon[]
-     */
-    public function showType($id)
-    {
-        $pokemonByType = Pokemon::findAllByType($id, "", 'number');
-        $this->show('type-list', ['pokemonByType' => $pokemonByType]);
     }
 
     /**
@@ -44,10 +35,26 @@ class CatalogController extends CoreController
     public function type()
     {
         $pokemonsModel = new Type;
-
         $typeList = $pokemonsModel->findAll();
+
         $this->show("type-list", [
+            'title' => 'Liste des types',
             "types" => $typeList
         ]);
     }
+
+    /**
+     * Method to display all pokemons related to one type
+     *
+     * @param int $id
+     * @return Pokemon[]
+     */
+    public function showType($id)
+    {
+        $pokemonsByType = Pokemon::findAllByType($id);
+        $this->show('type-catalog', [
+            'title' => 'Pokemons filtrés par type',
+            'pokemonsByType' => $pokemonsByType]);
+    }
+
 }

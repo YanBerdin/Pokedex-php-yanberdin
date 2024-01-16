@@ -13,10 +13,12 @@ dump( get_defined_vars() );
     <?php 
     if (!$types) {
         echo "Oups, aucun type trouvé ! Ce type de pokémon n'est pas encore répertorié";
-    } else {
+    }
+    
+    else {
         echo "<ul>";
          foreach ($types as $type) : ?>
-            <li class="type" style="background: #<?php echo $type->getColor() ?>;"><a href="<?= $router->generate("type-details", ["id" => $type->getID()]) ?>"><?= $type->getName() ?></a></li>
+            <li class="type" style="background: #<?php echo $type->getColor() ?>;"><a href="<?= $router->generate("type-catalog", ["id" => $type->getID()]) ?>"><?= $type->getName() ?></a></li>
         <?php endforeach;
         echo "</ul>";
     } ?>

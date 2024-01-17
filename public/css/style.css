@@ -193,7 +193,7 @@ h1 {
 
 .type_group li:hover {
   /*background: #ab3838; ---------------- type_group ------------------ */
-  opacity: 0.8; /* Valeur d'opacité (entre 0 et 1) au survol */
+  opacity: 0.9; /* Valeur d'opacité (entre 0 et 1) au survol */
   transform: scale(0.98); /* Augmentation de la taille au survol (1.0 est la taille normale) */
 }
 
@@ -235,6 +235,73 @@ footer {
     text-align: center;
     margin-top: 1rem;
 }
+
+/* .container-card {
+  margin: 10px;
+} */
+
+div.pokemon {
+  background-color: #982C2C;
+  /* padding: 20px;
+  border-radius: 30px; */
+}
+
+div.card-title {
+  color: white;
+  font-size: 1.5em;
+}
+
+div.card {
+  padding: 20px;
+  border-radius: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.nav-link {
+  font-size: 1rem;
+}
+
+.badge {
+  font-size: 10rem; /* <-- TODO*/
+}
+
+h3.card-title {
+  margin-bottom: 0;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+div.progress {  /*  NE Selectionne pas comme autre repo) */
+  background-color: #632B2B;
+  height: 25px;
+}
+
+div.progress-bar {
+  background-color: white;
+
+}
+
+div.progress-card {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+h6, .number {
+  width : 100%;
+  margin-bottom: 0;
+}
+
+.number {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+
 @media screen and (min-width: 500px) {
   .main_list {
     grid-template-columns: 1fr 1fr;
@@ -256,6 +323,21 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+@media screen and (min-width: 770px) {
+  .progress-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+  }
+  h6 {
+      width: 30%;
+  }
+  .number {
+      width: 20%
+  }
+}
+
 
 @media screen and (min-width: 1024px) {
   .container {

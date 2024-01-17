@@ -6,7 +6,7 @@
 <ul class='main_list main-list-ul'>
     <?php foreach ($pokemons as $pokemon) : ?>
         <li>
-            <a href="<?= $router->generate("pokemon-catalog", ["number" => $pokemon->getNumber()]) ?>">
+            <a href="<?= $router->generate("pokemon-card", ["number" => $pokemon->getNumber()]) ?>">
                 <img src="../img/<?= $pokemon->getNumber() ?>.png" alt="">
                 <?= $pokemon->getName() . " # " . $pokemon->getNumber() ?>
             </a>

@@ -121,6 +121,29 @@ class Pokemon extends CoreModel
 
     
     /**
+     * Method to retrieve all types for a given Pokemon number
+     *
+     * @param int $number
+     * @return Type[]
+     */
+    public function findTypesByPokemonNumber($number)
+    {
+        $pdo = Database::getPDO();
+        
+        $sql = "SELECT DISTINCT *
+                FROM `pokemon_type`
+                INNER JOIN `type` ON type.id = pokemon_type.type_id
+                WHERE `pokemon_number` = :number
+                ORDER BY `name`";
+
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindValue(':number', $number, PDO::PARAM_INT);
+        $pdoStatement->execute();
+
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS, Type::class);
+    }
+
+    /**
      * Get the value of name
      */ 
     public function getName()
@@ -203,7 +226,7 @@ class Pokemon extends CoreModel
     /**
      * Get the value of spe_attack
      */ 
-    public function getSpe_attack()
+    public function getSpeAttack()
     {
         return $this->spe_attack;
     }
@@ -213,7 +236,7 @@ class Pokemon extends CoreModel
      *
      * @return  self
      */ 
-    public function setSpe_attack($spe_attack)
+    public function setSpeAttack($spe_attack)
     {
         $this->spe_attack = $spe_attack;
 

@@ -67,12 +67,12 @@ $router->map(
 
 $router->map(
     "GET",
-    "/pokemon-catalog/[i:number]",
+    "/pokemon-card/[i:number]",
     [
         'controller' => CatalogController::class,
         'method' => 'detail',
     ],
-    'pokemon-catalog'
+    'pokemon-card'
 );
 
 

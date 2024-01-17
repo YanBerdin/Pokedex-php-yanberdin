@@ -20,10 +20,12 @@ class CatalogController extends CoreController
     {
         $pokemonModel = new Pokemon;
         $pokemon = $pokemonModel->findOne($number);
+        $types = $pokemonModel->findTypesByPokemonNumber($number);
 
-        $this->show("pokemon-catalog", [
+        $this->show("pokemon-card", [
             'title' => 'pokemon-card',
-            "pokemon" => $pokemon
+            "pokemon" => $pokemon,
+            'types' => $types
         ]);
     }
 

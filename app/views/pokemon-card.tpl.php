@@ -20,8 +20,9 @@ if (!empty($pokemon)) { ?>
 
             <div class="d-flex flex-wrap justify-content-center">
                   
-                  <img src="<?= $baseUri ?>img/<?= $pokemon->getNumber() ?>.png" class="img-fluid rounded-start mx-3 mb-3" style="object-fit: contain;" alt="image du pokemon <?= $pokemon->getName() ?>">
-                  <div class="card mb-3 pokemon" style="width: 50em">
+                  <img src="<?= $baseUri ?>img/<?= $pokemon->getNumber() ?>.png" class="fluid rounded-start mx-3 mb-3" style="object-fit: contain;" alt="image du pokemon <?= $pokemon->getName() ?>">
+                  
+                  <div class="card mb-3 pokemon" >
                         <div class="col-md-12">
                               <div class="card-body">
                                     <h3 class="card-title fw-bold">#<?= $pokemon->getNumber() ?> <?= $pokemon->getName() ?></h3>

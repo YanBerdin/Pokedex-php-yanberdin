@@ -23,7 +23,6 @@ main a:visited {
 }
 main a:hover,
 main a:focus {
-  /* color: #e2a9a9; */
   color: #fff;
 }
 
@@ -186,10 +185,8 @@ main h2 {
 .type_group li {
   text-align: center;
   border-radius: 30px;
-  /*background: #982c2c; -------- type_group ---------- */
 }
 .type_group li:hover {
-  /*background: #ab3838; ---------------- type_group ------------------ */
   opacity: 0.9;
   transform: scale(0.98);
   transition: 0.3s ease all;
@@ -231,7 +228,7 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 10rem;
 }
 
 /* Container img + card statistic */
@@ -242,7 +239,6 @@ footer {
 div.pokemon {
   background-color: #982c2c;
   width: 150px;
-  /* background-color: #ff00ff; */
   display: flex;
   flex-direction: raw;
 }
@@ -270,7 +266,7 @@ a.nav-link {
 }
 
 span.badge {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 7rem;
 }
 
@@ -283,9 +279,8 @@ h3.card-title {
 }
 
 div.progress {
-  /*  NE Selectionne pas comme autre repo) */
   background-color: #632b2b;
-  height: 25px;
+  height: 10px;
 }
 
 div.progress-bar {
@@ -345,8 +340,7 @@ h6,
     font-size: 1.8rem;
   }
   .body-container {
-    padding: 1rem 1rem 1rem 1rem; /* ------------------ A modifier pour ecrans + GD */
-    /* margin: 1rem; */
+    padding: 1rem 1rem 1rem 1rem;
   }
   /* Liste de tous les types */
   .types_list ul {
@@ -387,6 +381,15 @@ h6,
   .d-flex {
     padding: 0rem;
   }
+  /* Statitistic Card */
+  div.card {
+    width: 60em;
+    max-width: 80em;
+    padding: 1rem;
+  }
+  img {
+    max-width: 300px;
+  }
 
   /* Grille de Pokemon Home Page */
   .main_list {
@@ -404,16 +407,6 @@ h6,
   /* Liste de tous les types */
   .types_list ul {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-  img {
-    max-width: 300px;
-  }
-
-  /* Statitistic Card */
-  div.card {
-    width: 50em;
-    max-width: 80em; /* ----- Largeur des statitistiques --*/
-    padding: 1rem;
   }
 }
 
@@ -442,9 +435,19 @@ h6,
   img {
     max-width: 350px;
   }
+  /* Container progress bar x1  */
+  div.progress {
+    height: 15px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  div.card {
+    width: 45em;
+    padding: 1rem;
+    margin-top: 6rem;
+  }
+
   img {
     max-width: 350px;
   }
@@ -479,23 +482,18 @@ h6,
     max-width: 2800px;
   }
   img {
-    max-width: 400px;
-  }
-
-  /* Statitistic Card */
-  div.card {
-    width: 50em;
-    padding: 20px;
+    max-width: 340px;
   }
 
   /* Container img + statistic card */
   .d-flex {
-    margin-top: 4rem;
-    gap: 2rem;
-  }
-
-  footer {
     margin-top: 8rem;
+    gap: 1rem;
+  }
+  /* Statitistic Card */
+  div.card {
+    width: 50em;
+    padding: 2rem;
   }
 
   .logo {
@@ -516,5 +514,10 @@ h6,
   /* Pokemon by Type Gallery */
   .type_group {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  /* Container progress bar x1  */
+  div.progress {
+    background-color: #632b2b;
+    height: 20px;
   }
 }

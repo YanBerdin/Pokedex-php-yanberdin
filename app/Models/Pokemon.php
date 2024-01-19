@@ -1,4 +1,5 @@
 <?php
+
 namespace Pokedex\Models;
 
 use PDO;
@@ -16,40 +17,42 @@ class Pokemon extends CoreModel
     private $speed;
     private $number;
 
- public function findAll()
- {
-     // 1. Connexion à la BDD
-     $pdo = Database::getPDO();
+    public function findAll()
+    {
+        // 1. Connexion à la BDD
+        $pdo = Database::getPDO();
 
-     // 2. Préparer requête sous forme de string
-     $queryString = 'SELECT * FROM `pokemon`';
+        // 2. Préparer requête sous forme de string
+        $queryString = 'SELECT * FROM `pokemon`';
 
-     // 3. Exécuter la requête
-     $pdoStatement = $pdo->query($queryString);
+        // 3. Exécuter la requête
+        $pdoStatement = $pdo->query($queryString);
 
-     // 4. Récupère tous les résultats qui seront de type 'Pokemon'
-     $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
- 
-     return $results;
+        // 4. Récupèrer tous les résultats qui seront de type 'Pokemon'
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
 
- }
+        return $results;
+    }
 
- public function findOne($number)
- {
-     // 1. Connexion à la BDD
-     $pdo = Database::getPDO();
-     // 2. Query string
-     $queryString = "SELECT * FROM `pokemon` WHERE `number` =". $number;
+    public function findOne($number)
+    {
+        // 1. Connexion à la BDD
+        $pdo = Database::getPDO();
+        // 2. Query string
+        $queryString = "SELECT * FROM `pokemon` WHERE `number` =:number";
 
-     // 3. Exécuter la requête
-     $pdoStatement = $pdo->query($queryString); // ( voir S04 pour Syntaxe $pdo-> )
+        // 3. Préparer la requête
+        $pdoStatement = $pdo->prepare($queryString);
 
-     // 4. Récupérer le pokemon
-     $result = $pdoStatement->fetchObject(Pokemon::class);
-     // On ne veut récupérer qu'1 objet => fetchObject( de la classe Pokemon)
+        // 4. Exécuter la requête
+        $pdoStatement->execute([':number' => $number]);
 
-     return $result;
- }
+        // 5. Récupérer le pokemon
+        $result = $pdoStatement->fetchObject(Pokemon::class);
+        // On ne veut récupérer qu'1 objet => fetchObject( de la classe Pokemon)
+
+        return $result;
+    }
 
     /**
      * Method to retrieve all data from Pokemon according to his type 
@@ -65,8 +68,7 @@ class Pokemon extends CoreModel
         FROM `pokemon`
         INNER JOIN `pokemon_type` ON pokemon.number = pokemon_type.pokemon_number
         INNER JOIN `type` ON type.id = pokemon_type.type_id
-        WHERE type.id = " . $typeId
-        ;
+        WHERE type.id = :typeId";
         if ($group !== "") {
             $sql .= " GROUP BY $group";
         }
@@ -74,11 +76,15 @@ class Pokemon extends CoreModel
             $sql .= " ORDER BY $sort";
         }
 
-        $pdoStatement = $pdo->query($sql);
-      
+        // Requete préparée
+        $pdoStatement = $pdo->prepare($sql);
+
+        // Executer la requete
+        $pdoStatement->execute([':typeId' => $typeId]);
+
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
-    }    
-    
+    }
+
     /**
      * Method to retrieve all types for a given Pokemon number
      *
@@ -88,7 +94,7 @@ class Pokemon extends CoreModel
     public function findTypesByPokemonNumber($number)
     {
         $pdo = Database::getPDO();
-        
+
         $sql = "SELECT DISTINCT *
                 FROM `pokemon_type`
                 INNER JOIN `type` ON type.id = pokemon_type.type_id
@@ -104,7 +110,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -114,7 +120,7 @@ class Pokemon extends CoreModel
      * Set the value of name
      *
      * @return  self
-     */ 
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -124,7 +130,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of hp
-     */ 
+     */
     public function getHp()
     {
         return $this->hp;
@@ -134,7 +140,7 @@ class Pokemon extends CoreModel
      * Set the value of hp
      *
      * @return  self
-     */ 
+     */
     public function setHp($hp)
     {
         $this->hp = $hp;
@@ -144,7 +150,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of attack
-     */ 
+     */
     public function getAttack()
     {
         return $this->attack;
@@ -154,7 +160,7 @@ class Pokemon extends CoreModel
      * Set the value of attack
      *
      * @return  self
-     */ 
+     */
     public function setAttack($attack)
     {
         $this->attack = $attack;
@@ -164,7 +170,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of defense
-     */ 
+     */
     public function getDefense()
     {
         return $this->defense;
@@ -174,7 +180,7 @@ class Pokemon extends CoreModel
      * Set the value of defense
      *
      * @return  self
-     */ 
+     */
     public function setDefense($defense)
     {
         $this->defense = $defense;
@@ -184,7 +190,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of spe_attack
-     */ 
+     */
     public function getSpeAttack()
     {
         return $this->spe_attack;
@@ -194,7 +200,7 @@ class Pokemon extends CoreModel
      * Set the value of spe_attack
      *
      * @return  self
-     */ 
+     */
     public function setSpeAttack($spe_attack)
     {
         $this->spe_attack = $spe_attack;
@@ -204,7 +210,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of spe_defense
-     */ 
+     */
     public function getSpe_defense()
     {
         return $this->spe_defense;
@@ -214,7 +220,7 @@ class Pokemon extends CoreModel
      * Set the value of spe_defense
      *
      * @return  self
-     */ 
+     */
     public function setSpe_defense($spe_defense)
     {
         $this->spe_defense = $spe_defense;
@@ -224,7 +230,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of speed
-     */ 
+     */
     public function getSpeed()
     {
         return $this->speed;
@@ -234,7 +240,7 @@ class Pokemon extends CoreModel
      * Set the value of speed
      *
      * @return  self
-     */ 
+     */
     public function setSpeed($speed)
     {
         $this->speed = $speed;
@@ -244,7 +250,7 @@ class Pokemon extends CoreModel
 
     /**
      * Get the value of number
-     */ 
+     */
     public function getNumber()
     {
         return $this->number;
@@ -254,7 +260,7 @@ class Pokemon extends CoreModel
      * Set the value of number
      *
      * @return  self
-     */ 
+     */
     public function setNumber($number)
     {
         $this->number = $number;
@@ -262,6 +268,3 @@ class Pokemon extends CoreModel
         return $this;
     }
 }
-
-
-

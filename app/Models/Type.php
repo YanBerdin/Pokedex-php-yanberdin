@@ -1,4 +1,5 @@
 <?php
+
 namespace Pokedex\Models;
 
 use PDO;
@@ -42,12 +43,15 @@ class Type extends CoreModel
         $pdo = Database::getPDO();
 
         // 2. Ecrire la query string
-        $queryString = "SELECT * FROM `type` WHERE `id` =" . $id;
+        $queryString = "SELECT * FROM `type` WHERE `id` = :id";
 
-        // 3. Exécuter la requête
-        $pdoStatement = $pdo->query($queryString);
+        // 3. Préparer la requête
+        $pdoStatement = $pdo->prepare($queryString);
 
-        // 4. Récupèrer les détails d'un Type
+        // 4. Exécuter la requête
+        $pdoStatement->execute([':id' => $id]);
+
+        // 5. Récupèrer les détails d'un Type
         // On ne veut récupérer qu'1 objet => fetchObject( de la classe Type)
         $result = $pdoStatement->fetchObject(Type::class);
 

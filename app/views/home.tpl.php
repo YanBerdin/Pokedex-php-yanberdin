@@ -1,4 +1,4 @@
-<?php dump($viewData);
+<?php // dump($viewData);
 // $pokemons = $viewData['pokemons'];
 // var_dump($pokemons);
 ?>
@@ -8,7 +8,7 @@
         <li>
             <a href="<?= $router->generate("pokemon-card", ["number" => $pokemon->getNumber()]) ?>">
                 <img src="../img/<?= $pokemon->getNumber() ?>.png" alt="">
-                <?= $pokemon->getName() . " # " . $pokemon->getNumber() ?>
+                <?= "#" . $pokemon->getNumber() . " " . $pokemon->getName() ?>
             </a>
         </li>
 

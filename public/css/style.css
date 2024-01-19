@@ -2,12 +2,18 @@
   background: #c14040;
   color: #fff;
   font-family: "Bree Serif", serif;
-  /* padding: 0;
-  margin: 0; */
+  margin: 0;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  max-width: 1800px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Container main + footer */
+main.container {
+  padding: 1rem;
 }
 
 main a,
@@ -17,7 +23,8 @@ main a:visited {
 }
 main a:hover,
 main a:focus {
-  color: #e2a9a9;
+  /* color: #e2a9a9; */
+  color: #fff;
 }
 
 ul {
@@ -26,16 +33,10 @@ ul {
   margin: 0;
 }
 
-div .pokemon-card {
-  margin: 0 auto;
-  background: #fefe4c;
-}
-
 img {
   width: 100%;
-  max-height: 100%;
-  /* min-width: 220px; */
-  /* height: auto; */
+  height: auto;
+  max-width: 220px;
 }
 
 header a,
@@ -44,29 +45,19 @@ header a:visited {
   text-decoration: none;
 }
 
-header {
-  margin: 1rem 0;
-  margin-top: 1rem;
-  background-color: #ff00ff;
-}
-
-header .container {
+header.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #efe3e3;
   border-radius: 22px;
-  padding: 1rem;
-  /* background:#ff00ff; */
-  width: 100%;
+  padding: 1rem 1.5rem;
 }
 
 .menu {
-  /* background:#ff00ff; */
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* margin-right: 0.5rem; */
 }
 
 .logo {
@@ -76,7 +67,7 @@ header .container {
 .main_list {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
 }
@@ -90,6 +81,7 @@ header .container {
 
 .main_list li:hover {
   background: #ab3838;
+  transform: scale(0.98);
 }
 
 .main_list li a {
@@ -108,6 +100,10 @@ header .container {
 
 h1 {
   text-align: center;
+}
+
+main h2 {
+  font-size: 1rem;
 }
 
 .types li {
@@ -165,26 +161,25 @@ h1 {
   border-radius: 5px;
   position: relative;
 }
-
 .types_list .type a {
   color: #fff;
   padding: 1rem;
   text-align: center;
   display: block;
 }
-
 .types_list ul {
   display: grid;
   grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
+  grid-row-gap: 0.6rem;
+  padding: 0;
+  grid-template-columns: 1fr;
 }
 
-/* ---------------- type_group ------------------ */
 /* Grille de Pokemon filtrée par Type */
 .type_group {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
 }
@@ -192,15 +187,12 @@ h1 {
   text-align: center;
   border-radius: 30px;
   /*background: #982c2c; -------- type_group ---------- */
-  /* background: #ff00ff; */
-  transition: 0.3s ease all;
 }
 .type_group li:hover {
   /*background: #ab3838; ---------------- type_group ------------------ */
-  opacity: 0.9; /* Valeur d'opacité (entre 0 et 1) au survol */
-  transform: scale(
-    0.98
-  ); /* Augmentation de la taille au survol (1.0 est la taille normale) */
+  opacity: 0.9;
+  transform: scale(0.98);
+  transition: 0.3s ease all;
 }
 .type_group li a {
   padding: 1rem;
@@ -214,22 +206,25 @@ h1 {
   padding-left: 0;
   font-size: 1.2rem;
 }
+
+/* Gallery by Type Title */
+.type-gallery {
+  font-size: 1.3rem;
+}
+
 /* Page Error 404 */
 .gif {
   /* background: #ff00ff; */
   max-width: 100%;
   border-radius: 3%;
-  /* padding: 1rem; */
   display: flex;
   flex-direction: column;
-  /* gap: 1rem; */
   align-items: center;
   text-align: center;
   justify-content: center;
 }
 .gif p {
   font-size: 2rem;
-  /* padding: 2rem; */
 }
 
 footer {
@@ -239,32 +234,29 @@ footer {
   margin-top: 1rem;
 }
 
-/* .container-card {
-  margin: 10px;
-} */
+/* Container img + card statistic */
 .d-flex {
-  /* background-color: #ff00ff; */
   padding: 0.5rem;
-  /* margin-top: 2rem;
-  padding-top: 8rem;
-  gap: 4rem; */
 }
 
 div.pokemon {
-  /* background-color: #982C2C; ----------------------------------*/
+  background-color: #982c2c;
   width: 150px;
-  background-color: #ff00ff;
+  /* background-color: #ff00ff; */
   display: flex;
   flex-direction: raw;
 }
 
+/* Statitistic Card */
 div.card-title {
   color: white;
   font-size: 1.5em;
 }
 
+/* Statitistic Card */
 div.card {
-  width: 50em; /* ----- Largeur des statitistiques --*/
+  width: 20em;
+  max-width: 50em;
   padding: 5px;
   border-radius: 30px;
 }
@@ -277,8 +269,9 @@ a.nav-link {
   font-size: 1rem;
 }
 
-.badge {
-  font-size: 10rem; /* <---------------------------------------------------------- TODO*/
+span.badge {
+  font-size: 1.5rem;
+  width: 7rem;
 }
 
 h3.card-title {
@@ -316,7 +309,28 @@ h6,
   margin-top: 4px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 374px) {
+  /* Grille de Pokemon filtrée par Type */
+  .type_group {
+    grid-template-columns: 1fr;
+  }
+  .main_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  /* Titre gallery by Type */
+  .type-gallery {
+    font-size: 1.5rem;
+  }
+  /* Liste de tous les types */
+  .types_list ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 576px) {
   /* Grille de Pokemon Home Page */
   .main_list {
     grid-template-columns: 1fr 1fr;
@@ -326,13 +340,24 @@ h6,
   .type_group-ul {
     font-size: 1rem;
   }
-}
-
-@media screen and (max-width: 500px) {
-  /* Grille de Pokemon filtrée par Type */
-  .type_group {
+  /*Title Pokemon gallery by Type */
+  .type-gallery {
+    font-size: 1.8rem;
+  }
+  .body-container {
+    padding: 1rem 1rem 1rem 1rem; /* ------------------ A modifier pour ecrans + GD */
+    /* margin: 1rem; */
+  }
+  /* Liste de tous les types */
+  .types_list ul {
     grid-template-columns: 1fr 1fr;
   }
+  main h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .main_pokemon .wrapper {
     display: flex;
   }
@@ -343,18 +368,9 @@ h6,
   .right_side {
     flex: 3;
   }
-  .types_list ul {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  img {
-    /*max-width: 220px; /* -------- Ajuster pour GRAND ECRAN */
-  }
-  header {
-    padding: 1rem 3rem 1rem 3rem;
-  }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 768px) {
   .progress-card {
     display: flex;
     align-items: center;
@@ -366,8 +382,9 @@ h6,
   .number {
     width: 20%;
   }
+
+  /* Container img + card statistic */
   .d-flex {
-    /* background-color: #ff00ff; */
     padding: 0rem;
   }
 
@@ -375,22 +392,43 @@ h6,
   .main_list {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
+  /*Title Pokemon gallery by Type */
+  .type-gallery {
+    font-size: 2.5rem;
+    padding: 1rem;
   }
-  /* Grille de Pokemon Home Page */
-  .main_list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   /* Grille de Pokemon filtrée par Type */
   .type_group {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  /* Liste de tous les types */
+  .types_list ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  img {
+    max-width: 300px;
+  }
 
+  /* Statitistic Card */
+  div.card {
+    width: 50em;
+    max-width: 80em; /* ----- Largeur des statitistiques --*/
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* Grille de Pokemon Home Page */
+  .main_list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* Grille de Pokemon filtrée par Type */
+  .type_group {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* Liste de tous les types */
   .types_list ul {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -401,12 +439,15 @@ h6,
   .gif-img {
     width: 400px;
   }
+  img {
+    max-width: 350px;
+  }
 }
 
-@media screen and (min-width: 1280px) {
-  /* header .container {
-    margin-top: 3rem;
-  } */
+@media screen and (min-width: 1200px) {
+  img {
+    max-width: 350px;
+  }
 
   .gif {
     flex-wrap: nowrap;
@@ -416,64 +457,64 @@ h6,
     width: 500px;
   }
 
-  /* Grille de Pokemon Home Page */
-  /* .main_list {
-    grid-template-columns: 1fr 1fr 1fr;
-  } */
+  /* Home Page Pokemon Gallery */
+  .main_list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
   .main-list-ul {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   /* Grille de Pokemon filtrée par Type */
   .type_group {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
   .type_group-ul {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  header.container {
-    max-width: 1800px;
+  .body-container {
+    max-width: 2800px;
+  }
+  img {
+    max-width: 400px;
   }
 
-  div.container {
-    max-width: 1800px;
-  }
+  /* Statitistic Card */
   div.card {
-    padding: 15px;
+    width: 50em;
+    padding: 20px;
   }
-  main.container {
-    background-color: green;
-    max-width: 1800px;
-  }
+
+  /* Container img + statistic card */
   .d-flex {
-    margin-top: 2rem;
-    padding-top: 8rem;
-    gap: 4rem;
+    margin-top: 4rem;
+    gap: 2rem;
   }
+
   footer {
-    margin-top: 15rem;
+    margin-top: 8rem;
   }
 
   .logo {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
   .main-list-ul {
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
   .type_group-ul {
     padding-left: 0;
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
-  /* Grille de Pokemon Home Page */
+  /* Home Page Pokemon Gallery*/
   .main_list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 
-  /* Grille de Pokemon filtrée par Type */
+  /* Pokemon by Type Gallery */
   .type_group {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

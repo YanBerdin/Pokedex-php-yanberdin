@@ -1,13 +1,11 @@
 <?php
 namespace Pokedex\Models;
-// require_once __DIR__ . "/../utils/Database.php";
 
 use PDO;
 use Pokedex\Utils\Database;
 
 class Type extends CoreModel
 {
-
     // private $id;
     // private $name;
     private $color;
@@ -37,18 +35,22 @@ class Type extends CoreModel
         return $results;
     }
 
-    public function findOne($id)
+    // Method to retrieve a type by `id`
+    public static function findOne($id)
     {
         // 1. Connexion à la BDD
         $pdo = Database::getPDO();
+
         // 2. Ecrire la query string
-        $queryString = 'SELECT * FROM `type` WHERE id = ' . $id;
+        $queryString = "SELECT * FROM `type` WHERE `id` =" . $id;
+
         // 3. Exécuter la requête
-        $pdoStatement = $pdo->query($queryString); // ( voir S04 pour Syntaxe $pdo-> )
-        // 4. Récupèrer la marque
-        $result = $pdoStatement->fetchObject($queryString);
+        $pdoStatement = $pdo->query($queryString);
+
+        // 4. Récupèrer les détails d'un Type
         // On ne veut récupérer qu'1 objet => fetchObject( de la classe Type)
-        // 5. On retourne le résultat
+        $result = $pdoStatement->fetchObject(Type::class);
+
         return $result;
     }
 

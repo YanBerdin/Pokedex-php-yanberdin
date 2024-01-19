@@ -19,9 +19,7 @@ a {
     color: #218BC3;
     text-decoration: none;
 }
-a:hover {
-    text-decoration: underline;
-}
+
 .text-small {
     font-size: 12px !important;
 }

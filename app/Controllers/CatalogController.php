@@ -54,9 +54,11 @@ class CatalogController extends CoreController
     public function showType($id)
     {
         $pokemonsByType = Pokemon::findAllByType($id);
+        $selectedType = Type::findOne($id);
         $this->show('type-catalog', [
             'title' => 'Pokemons filtrés par type',
-            'pokemonsByType' => $pokemonsByType]);
+            'pokemonsByType' => $pokemonsByType,
+            'selectedType' => $selectedType ]);
     }
 
 }

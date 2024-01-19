@@ -1,11 +1,6 @@
 <?php
-dump($viewData);
-// $pokemonByType = $viewData['pokemonByType'];
 $types = $viewData['types'];
-
-// var_dump($pokemons);
-// var_dump($absoluteURL);
-dump(get_defined_vars());
+// dump(get_defined_vars());
 ?>
 <div class="types_list">
     <h2>Cliquez sur un type pour voir tous les Pokémon de ce type</h2>

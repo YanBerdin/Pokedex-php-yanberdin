@@ -13,7 +13,11 @@ class MainController extends CoreController
     //     $this->show('home');
     // }
 
-    // Affichage de la liste (page d'accueil)
+    /**
+     * Displays the catalog Home page.
+     *
+     * @return void
+     */
     public function catalog()
     {
         $pokemonModel = new Pokemon;

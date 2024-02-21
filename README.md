@@ -1,4 +1,4 @@
-# Pokédex for MVC Lovers
+# `Pokédex for MVC Lovers`
 
 - PHP
 - MySQL
@@ -7,7 +7,7 @@
 - AltoRouter
 - Bootstrap
  
-Vous avez un aperçu de chaque dans le dossier résultat : 
+Aperçu dans le dossier résultat : 
 
 - Une [page d'accueil](resultat/home.png) qui liste tous les pokémon de la base
 - Une [page détail d'un pokémon](resultat/detail.png) qui affiche son type et ses stats

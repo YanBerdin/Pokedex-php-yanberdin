@@ -2,6 +2,12 @@
 
 namespace Pokedex\Controllers;
 
+/**
+ * Class ErrorController
+ * 
+ * This class represents the controller for handling errors in the application.
+ * It extends the CoreController class.
+ */
 class ErrorController extends CoreController
 
 {

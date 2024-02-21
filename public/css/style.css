@@ -60,6 +60,12 @@ header.container {
   width: 100%;
 }
 
+.menu a:hover {
+  opacity: 0.8;
+  transform: scale(0.98);
+  transition: 0.3s ease all;
+}
+
 /* nav items */
 .logo {
   font-size: 1rem;
@@ -170,6 +176,12 @@ main h2 {
   display: block;
 }
 
+.types_list li:hover {
+  transform: scale(0.98);
+  opacity: 0.85;
+  transition: 0.3s ease and out;
+}
+
 .types_list ul {
   display: grid;
   grid-column-gap: 0.5rem;
@@ -278,6 +290,11 @@ a.nav-link {
   width: 7rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.card-body span.badge:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
 }
 
 h3.card-title {

@@ -30,9 +30,9 @@ class CatalogController extends CoreController
     }
 
     /**
-     * Method to display all types
+     * Retrieves the type of the Pokemon.
      *
-     * // @return Types[]
+     * @return void
      */
     public function type()
     {
@@ -58,7 +58,7 @@ class CatalogController extends CoreController
         $this->show('type-catalog', [
             'title' => 'Pokemons filtrés par type',
             'pokemonsByType' => $pokemonsByType,
-            'selectedType' => $selectedType ]);
+            'selectedType' => $selectedType
+        ]);
     }
-
 }

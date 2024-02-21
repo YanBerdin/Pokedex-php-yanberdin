@@ -36,7 +36,12 @@ class Type extends CoreModel
         return $results;
     }
 
-    // Method to retrieve a type by `id`
+    /**
+     * Find a type by its ID.
+     *
+     * @param int $id The ID of the type.
+     * @return Type|null The found type or null if not found.
+     */
     public static function findOne($id)
     {
         // 1. Connexion à la BDD

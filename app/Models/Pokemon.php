@@ -5,6 +5,11 @@ namespace Pokedex\Models;
 use PDO;
 use Pokedex\Utils\Database;
 
+/**
+ * Represents a Pokemon.
+ *
+ * This class extends the CoreModel class and serves as a model for Pokemon objects.
+ */
 class Pokemon extends CoreModel
 {
     // private $id;

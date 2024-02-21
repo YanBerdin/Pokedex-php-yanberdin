@@ -24,7 +24,7 @@ class Pokemon extends CoreModel
 
     public function findAll()
     {
-        // 1. Connexion à la BDD
+        // 1. Connexion à la BDD //TODO: remove comment
         $pdo = Database::getPDO();
 
         // 2. Préparer requête sous forme de string
@@ -41,7 +41,7 @@ class Pokemon extends CoreModel
 
     public function findOne($number)
     {
-        // 1. Connexion à la BDD
+        // 1. Connexion à la BDD //TODO: remove comment
         $pdo = Database::getPDO();
         // 2. Query string
         $queryString = "SELECT * FROM `pokemon` WHERE `number` =:number";

@@ -1,7 +1,7 @@
 <?php
 
 namespace Pokedex\Controllers;
-
+//TODO: remove comment
 // require_once __DIR__ . '/../Models/Pokemon.php';
 // require_once __DIR__ . '/../Models/Type.php';
 

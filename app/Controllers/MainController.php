@@ -8,6 +8,7 @@ use Pokedex\Models\Pokemon;
 
 class MainController extends CoreController
 {
+    //TODO: remove comment
     // public function home() //  home() sur l'objet courant this appele show() en lui passant le parametre $viewname (préfixe du nom du template ici 'home')
     // {
     //     $this->show('home');
@@ -29,6 +30,7 @@ class MainController extends CoreController
         ]);
     }
 
+    //TODO: remove comment
     /**
      * Affiche la page
      *

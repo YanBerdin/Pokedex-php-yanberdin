@@ -17,6 +17,7 @@ class ErrorController extends CoreController
         $this->show("404");
     }
 
+    //TODO: remove comment
     /**
      * Affiche la page
      *

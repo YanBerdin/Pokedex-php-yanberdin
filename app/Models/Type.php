@@ -19,7 +19,7 @@ class Type extends CoreModel
      */
     public static function findAll($sort = "")
     {
-        // 1. Connexion à la BDD
+        // 1. Connexion à la BDD //TODO: remove comment
         $pdo = Database::getPDO();
         // 2. Préparer la requête sous forme de string
         // $queryString = 'SELECT * FROM `type` ORDER BY `name`';
@@ -47,7 +47,7 @@ class Type extends CoreModel
         // 1. Connexion à la BDD
         $pdo = Database::getPDO();
 
-        // 2. Ecrire la query string
+        // 2. Ecrire la query string //TODO: remove comment
         $queryString = "SELECT * FROM `type` WHERE `id` = :id";
 
         // 3. Préparer la requête

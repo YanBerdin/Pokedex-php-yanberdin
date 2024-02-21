@@ -1,8 +1,9 @@
 <footer class="container">
-</br>
+    </br>
     <p>Site réalisé avec amour par un amoureux de MVC </p>
     <p>&copy; Yan Berdin 2023</p>
 </footer>
 </body>
 
-</html><!-- jusqu'à la fin du fichier -->
+</html>
+<!-- jusqu'à la fin du fichier -->

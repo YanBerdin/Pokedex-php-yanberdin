@@ -31,11 +31,10 @@
 
 <body class="body-container">
     <header class="container">
-        
-            <nav class="menu">
-                <a class="logo" href="<?= $router->generate("home") ?>">Pokédex</a>
-                <a class="logo" href="<?= $router->generate("type-list") ?>">Types</a>
-            </nav>
-     
+
+        <nav class="menu">
+            <a class="logo" href="<?= $router->generate("home") ?>">Pokédex</a>
+            <a class="logo" href="<?= $router->generate("type-list") ?>">Types</a>
+        </nav>
     </header>
     <main class="container">

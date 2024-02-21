@@ -5,4 +5,4 @@
 </footer>
 </body>
 
-</html><!-- jusqu'à la fin du fichier -->
+</html>

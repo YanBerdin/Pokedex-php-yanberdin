@@ -22,39 +22,44 @@ class Pokemon extends CoreModel
     private $speed;
     private $number;
 
+    /**
+     * Retrieves all the Pokemon records from the database.
+     *
+     * @return array The array of Pokemon records.
+     */
     public function findAll()
     {
-        // 1. Connexion à la BDD
         $pdo = Database::getPDO();
 
-        // 2. Préparer requête sous forme de string
         $queryString = 'SELECT * FROM `pokemon`';
 
-        // 3. Exécuter la requête
         $pdoStatement = $pdo->query($queryString);
 
-        // 4. Récupèrer tous les résultats qui seront de type 'Pokemon'
+        // Récupèrer tous les résultats de type 'Pokemon'
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
 
         return $results;
     }
 
+    /**
+     * Find a Pokemon by its number.
+     *
+     * @param int $number The number of the Pokemon to find.
+     * @return mixed The found Pokemon or null if not found.
+     */
     public function findOne($number)
     {
-        // 1. Connexion à la BDD
+
         $pdo = Database::getPDO();
-        // 2. Query string
+
         $queryString = "SELECT * FROM `pokemon` WHERE `number` =:number";
 
-        // 3. Préparer la requête
         $pdoStatement = $pdo->prepare($queryString);
 
-        // 4. Exécuter la requête
         $pdoStatement->execute([':number' => $number]);
 
-        // 5. Récupérer le pokemon
+        // récupére qu'1 objet => fetchObject( de la classe Pokemon)
         $result = $pdoStatement->fetchObject(Pokemon::class);
-        // On ne veut récupérer qu'1 objet => fetchObject( de la classe Pokemon)
 
         return $result;
     }
@@ -84,7 +89,6 @@ class Pokemon extends CoreModel
         // Requete préparée
         $pdoStatement = $pdo->prepare($sql);
 
-        // Executer la requete
         $pdoStatement->execute([':typeId' => $typeId]);
 
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);

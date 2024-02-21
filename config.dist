@@ -1,0 +1,8 @@
+; config file
+
+; database
+
+DB_HOST= 'xxxxxx';
+DB_NAME= 'xxxxxxxx';
+DB_USERNAME= 'xxxxx';
+DB_PASSWORD= 'xxxxxx';

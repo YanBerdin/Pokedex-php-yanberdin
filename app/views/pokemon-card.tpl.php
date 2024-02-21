@@ -28,7 +28,7 @@ if (!empty($pokemon)) { ?>
                                     <h3 class="card-title fw-bold">#<?= $pokemon->getNumber() ?> <?= $pokemon->getName() ?></h3>
                                     <?php foreach ($types as $type) : ?>
                                           <a href="<?= $router->generate('type-list', ["id" => $type->getId()]) ?>">
-                                                <span class="badge p-2 me-2 my-3 fw-light" style="background-color: #<?= $type->getColor() ?>">
+                                                <span class="badge p-2 me-2 fw-light" style="background-color: #<?= $type->getColor() ?>">
                                                       <?= $type->getName() ?>
                                                 </span></a>
                                     <?php endforeach; ?>

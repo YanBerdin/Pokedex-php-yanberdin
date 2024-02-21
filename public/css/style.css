@@ -36,6 +36,7 @@ img {
   width: 100%;
   height: auto;
   max-width: 220px;
+  /* margin-top: 1rem; */
 }
 
 header a,
@@ -50,17 +51,18 @@ header.container {
   align-items: center;
   background: #efe3e3;
   border-radius: 22px;
-  padding: 1rem 1.5rem;
+  padding: 0.2rem 1rem;
 }
-
+/* nav */
 .menu {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
+/* nav items */
 .logo {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .main_list {
@@ -160,18 +162,22 @@ main h2 {
   border-radius: 5px;
   position: relative;
 }
+
 .types_list .type a {
   color: #fff;
-  padding: 1rem;
+  padding: 0.8rem;
   text-align: center;
   display: block;
 }
+
 .types_list ul {
   display: grid;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.6rem;
   padding: 0;
   grid-template-columns: 1fr;
+  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 /* Grille de Pokemon filtrée par Type */
@@ -199,9 +205,11 @@ main h2 {
   /* Verifier si selecteur OK */
   font-size: 1.2rem;
 }
+
+/* Grille de Pokemon filtrée par Type */
 .type_group-ul {
   padding-left: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Gallery by Type Title */
@@ -233,7 +241,7 @@ footer {
 
 /* Container img + card statistic */
 .d-flex {
-  padding: 0.5rem;
+  padding: 0rem;
 }
 
 div.pokemon {
@@ -253,7 +261,7 @@ div.card-title {
 div.card {
   width: 20em;
   max-width: 50em;
-  padding: 5px;
+  padding: 4px;
   border-radius: 30px;
 }
 
@@ -265,9 +273,11 @@ a.nav-link {
   font-size: 1rem;
 }
 
-span.badge {
-  font-size: 1.2rem;
+.card-body span.badge {
+  font-size: 1rem;
   width: 7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 h3.card-title {
@@ -275,7 +285,7 @@ h3.card-title {
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 div.progress {
@@ -289,11 +299,10 @@ div.progress-bar {
 
 div.progress-card {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-h6,
-.number {
+.card-title h6 {
   width: 100%;
   margin-bottom: 0;
 }
@@ -301,28 +310,16 @@ h6,
 .number {
   font-size: 1rem;
   font-style: italic;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
-@media screen and (max-width: 374px) {
-  /* Grille de Pokemon filtrée par Type */
-  .type_group {
-    grid-template-columns: 1fr;
-  }
-  .main_list {
-    grid-template-columns: 1fr;
-  }
+/* Grille de Pokemon filtrée par Type */
+.type_group {
+  grid-template-columns: 1fr;
 }
 
-@media screen and (min-width: 375px) {
-  /* Titre gallery by Type */
-  .type-gallery {
-    font-size: 1.5rem;
-  }
-  /* Liste de tous les types */
-  .types_list ul {
-    grid-template-columns: 1fr 1fr;
-  }
+.main_list {
+  grid-template-columns: 1fr;
 }
 
 @media screen and (min-width: 576px) {
@@ -331,10 +328,6 @@ h6,
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Grille de Pokemon filtrée par Type */
-  .type_group-ul {
-    font-size: 1rem;
-  }
   /*Title Pokemon gallery by Type */
   .type-gallery {
     font-size: 1.8rem;
@@ -342,10 +335,7 @@ h6,
   .body-container {
     padding: 1rem 1rem 1rem 1rem;
   }
-  /* Liste de tous les types */
-  .types_list ul {
-    grid-template-columns: 1fr 1fr;
-  }
+
   main h2 {
     font-size: 1.5rem;
   }
@@ -365,12 +355,15 @@ h6,
 }
 
 @media screen and (min-width: 768px) {
+  .logo {
+    font-size: 1.2rem;
+  }
   .progress-card {
     display: flex;
     align-items: center;
     margin-bottom: 4px;
   }
-  h6 {
+  .card-title h6 {
     width: 30%;
   }
   .number {
@@ -379,8 +372,9 @@ h6,
 
   /* Container img + card statistic */
   .d-flex {
-    padding: 0rem;
+    margin-top: 3rem;
   }
+
   /* Statitistic Card */
   div.card {
     width: 60em;
@@ -408,6 +402,9 @@ h6,
   .types_list ul {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .types_list .type a {
+    padding: 1rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -433,7 +430,7 @@ h6,
     width: 400px;
   }
   img {
-    max-width: 350px;
+    max-width: 300px;
   }
   /* Container progress bar x1  */
   div.progress {
@@ -441,7 +438,7 @@ h6,
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   div.card {
     width: 45em;
     padding: 1rem;
@@ -475,6 +472,10 @@ h6,
   .type_group-ul {
     font-size: 1.2rem;
   }
+
+  header.container {
+    padding: 0.5rem 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -487,24 +488,23 @@ h6,
 
   /* Container img + statistic card */
   .d-flex {
-    margin-top: 8rem;
+    margin-top: 1rem;
     gap: 1rem;
   }
   /* Statitistic Card */
   div.card {
     width: 50em;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .main-list-ul {
     font-size: 1.1rem;
   }
   .type_group-ul {
     padding-left: 0;
-    font-size: 1.1rem;
   }
   /* Home Page Pokemon Gallery*/
   .main_list {
@@ -519,5 +519,11 @@ h6,
   div.progress {
     background-color: #632b2b;
     height: 20px;
+  }
+  .card-body span.badge {
+    font-size: 1.2rem;
+    width: 8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
